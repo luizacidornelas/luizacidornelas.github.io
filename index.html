@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luiza - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(34, 84, 61, 0.7), rgba(34, 84, 61, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23225a3d" width="1200" height="800"/><path fill="%232d7a52" d="M0 400 Q300 350 600 400 T1200 400 V800 H0 Z"/><path fill="%23389866" d="M0 450 Q300 420 600 450 T1200 450 V800 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #2d7a52;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .location {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        nav a:hover {
+            border-bottom-color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+
+            nav {
+                gap: 1.5rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-photo">L</div>
+        
+        <h1>Luiza Cid Ornelas</h1>
+        
+        <p class="subtitle">Your Title Here | Your Interest | Your Passion</p>
+        
+        <p class="location">Your City, Your Country</p>
+        
+        <div class="social-links">
+            <a href="mailto:your.email@example.com">
+                <span class="icon">✉</span> Email
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <span class="icon">in</span> LinkedIn
+            </a>
+        </div>
+        
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#cv">CV</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About Me</a>
+            <a href="#social-impact">Social Impact</a>
+        </nav>
+    </div>
+    
+    <footer>
+        © 2025 Luiza Cid Ornelas. All rights reserved.
+    </footer>
+</body>
+</html>
