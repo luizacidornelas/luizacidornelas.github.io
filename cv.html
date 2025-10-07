@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luiza Cid Ornelas - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d7a52 0%, #389866 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .cv-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #2d7a52;
+        }
+
+        .cv-header h1 {
+            font-size: 2.5rem;
+            color: #2d7a52;
+            margin-bottom: 1rem;
+        }
+
+        .cv-intro {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .cv-category {
+            margin-bottom: 3rem;
+        }
+
+        .cv-category h2 {
+            font-size: 1.5rem;
+            color: #2d7a52;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cv-item {
+            margin-bottom: 2rem;
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cv-item-title {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .cv-item-date {
+            color: #2d7a52;
+            font-size: 0.95rem;
+        }
+
+        .cv-item-subtitle {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .cv-item-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .cv-item-description li {
+            margin-bottom: 0.3rem;
+            margin-left: 1.5rem;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            padding: 0.5rem 0;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #2d7a52;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+            }
+
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Luiza Cid Ornelas</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#social-impact">Social Impact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cv-container">
+        <div class="cv-header">
+            <h1>Curriculum Vitae</h1>
+            <p class="cv-intro">Master's student in Mobility Engineering at Politecnico di Milano with strong analytical and interpersonal skills. Experienced in teamwork, leadership, and data management through volunteer coordination and research roles. Passionate about bridging technical expertise with empathy and collaboration to drive positive social and organizational impact.</p>
+        </div>
+
+        <div class="cv-category">
+            <h2>Education</h2>
+            
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Politecnico di Milano, Milan, Italy</span>
+                    <span class="cv-item-date">Sept 2024 – Present</span>
+                </div>
+                <div class="cv-item-subtitle">Master of Science in Mobility Engineering. GPA: 27.5/30</div>
+                <p class="cv-item-description">Relevant coursework: Data Science and Security for Mobility, Finance And Management Of Infrastructure Investments.</p>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Universidade de Brasília, Brasília, Brazil</span>
+                    <span class="cv-item-date">Jan 2019 – Dec 2023</span>
+                </div>
+                <div class="cv-item-subtitle">Bachelor of Science in Mechanical Engineering. GPA: 4.5/5.0</div>
+                <p class="cv-item-description">Relevant coursework: Probability and Statistics, Introduction to Linear Algebra, Introduction to Computer Science, Industrial Organization, Introduction to Economy.</p>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">University of British Columbia, Vancouver, Canada</span>
+                    <span class="cv-item-date">July 2023 - Aug 2023</span>
+                </div>
+                <div class="cv-item-subtitle">Vancouver Summer Program - Faculty of Applied Science - Mechanical Engineering</div>
+            </div>
+        </div>
+
+        <div class="cv-category">
+            <h2>Professional Experience</h2>
+            
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Volunteer Data Manager & Academic Coordinator</span>
+                    <span class="cv-item-date">2023 – Present</span>
+                </div>
+                <div class="cv-item-subtitle">NGO Amor Aquém, Brazil</div>
+                <ul class="cv-item-description">
+                    <li>Structured and maintained Excel databases centralizing information for over 100 enrolled children.</li>
+                    <li>Developed a Python script to process registration data and automatically group children by age and subject, optimizing class assignments and resource allocation.</li>
+                    <li>Produced analytical dashboards and visual reports to support pedagogical planning and decision-making.</li>
+                    <li>Prepared project cost analyses to formalize the partnership with Instituto Menos é Mais and ensure transparent resource management.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Intern in Federal Court of Accounts, Brazil</span>
+                    <span class="cv-item-date">Jul 2022 - Mar 2023</span>
+                </div>
+                <div class="cv-item-subtitle">Facilities Management and Services Division</div>
+                <ul class="cv-item-description">
+                    <li>Assistance in projects, studies, evaluations and acquisitions related to Mechanical Engineering.</li>
+                    <li>Creation of projects using Revit.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Research Assistant</span>
+                    <span class="cv-item-date">2022 – 2023</span>
+                </div>
+                <div class="cv-item-subtitle">Universidade de Brasília, Brazil</div>
+                <ul class="cv-item-description">
+                    <li>Conducted data analysis and visualization using Python and Excel for engineering systems.</li>
+                    <li>Modeled and interpreted technical data to support reports and presentations.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Teaching Assistant</span>
+                    <span class="cv-item-date">2019 – 2023</span>
+                </div>
+                <div class="cv-item-subtitle">Universidade de Brasília, Brazil</div>
+                <p class="cv-item-description">Fluid Mechanics I, Fluid Mechanics II, Heat Transfer, Mechanics of Materials I, Calculus III, Mechanical Computer-Aided Design, Physics I.</p>
+            </div>
+        </div>
+
+        <div class="cv-category">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span class="skill-label">Technical:</span> Python, Excel and LaTeX.
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Soft Skills:</span> Leadership, teamwork, communication, adaptability, problem solving.
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-category">
+            <h2>Scholarships, Certifications & Awards</h2>
+            
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Merit-Based Scholarship</span>
+                    <span class="cv-item-date">2025</span>
+                </div>
+                <p class="cv-item-description">Politecnico di Milano - Awarded for outstanding academic performance in the MSc Mobility Engineering program.</p>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">FAP-DF Research Scholarship</span>
+                    <span class="cv-item-date">2022</span>
+                </div>
+                <p class="cv-item-description">Federal District Research Support Foundation</p>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Outstanding Award Nomination</span>
+                    <span class="cv-item-date">2023</span>
+                </div>
+                <p class="cv-item-description">20th Scientific Initiation Conference, Federal District</p>
+            </div>
+        </div>
+
+        <div class="cv-category">
+            <h2>Languages</h2>
+            <div class="languages-grid">
+                <div class="skill-item"><span class="skill-label">Portuguese:</span> Native</div>
+                <div class="skill-item"><span class="skill-label">English:</span> Fluent (TOEFL iBT 100/120)</div>
+                <div class="skill-item"><span class="skill-label">Italian:</span> Upper-intermediate (Level B2)</div>
+                <div class="skill-item"><span class="skill-label">Spanish:</span> Upper-intermediate (DELE B2)</div>
+                <div class="skill-item"><span class="skill-label">French:</span> Upper-intermediate (DELF B2)</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Luiza Cid Ornelas. All rights reserved.
+    </footer>
+</body>
+</html>
