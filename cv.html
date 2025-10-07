@@ -154,6 +154,63 @@
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skills-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-column {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #2d7a52;
+        }
+
+        .skill-column h3 {
+            color: #2d7a52;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-bar-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-bar-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skill-level {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .skill-bar-bg {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            background: linear-gradient(90deg, #2d7a52, #389866);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
         }
 
         .cv-item {
@@ -192,27 +249,6 @@
         .cv-item-description li {
             margin-bottom: 0.3rem;
             margin-left: 1.5rem;
-        }
-
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-item {
-            padding: 0.5rem 0;
-        }
-
-        .skill-label {
-            font-weight: 600;
-            color: #2d7a52;
-        }
-
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
         }
 
         footer {
@@ -371,18 +407,106 @@
 
         <div class="cv-category">
             <h2>Skills</h2>
-            <div class="skills-list">
-                <div class="skill-item">
-                    <span class="skill-label">Technical:</span> Python, Excel and LaTeX.
+            <div class="skills-section">
+                <div class="skill-column">
+                    <h3>Technical Skills</h3>
+                    
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span class="skill-name">Excel</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span class="skill-name">LaTeX</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <span class="skill-label">Soft Skills:</span> Leadership, teamwork, communication, adaptability, problem solving.
+
+                <div class="skill-column">
+                    <h3>Soft Skills</h3>
+                    <p class="cv-item-description">Leadership, teamwork, communication, adaptability, problem solving.</p>
                 </div>
             </div>
         </div>
 
         <div class="cv-category">
-            <h2>Scholarships, Certifications & Awards</h2>
+            <h2>Languages</h2>
+            <div class="skills-section">
+                <div class="skill-column">
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span class="skill-name">Portuguese</span>
+                            <span class="skill-level">Native</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span class="skill-name">English</span>
+                            <span class="skill-level">Fluent (TOEFL 100/120)</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span class="skill-name">Italian</span>
+                            <span class="skill-level">Upper-intermediate (B2)</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-column">
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span class="skill-name">Spanish</span>
+                            <span class="skill-level">Upper-intermediate (DELE B2)</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span class="skill-name">French</span>
+                            <span class="skill-level">Upper-intermediate (DELF B2)</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
             
             <div class="cv-item">
                 <div class="cv-item-header">
