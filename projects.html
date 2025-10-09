@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luiza Cid Ornelas - Projects</title>
+    <title>Luiza Cid Ornelas - Social Impact</title>
     <style>
         * {
             margin: 0;
@@ -121,30 +121,145 @@
             max-width: 1000px;
             margin: 3rem auto;
             padding: 0 2rem;
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        }
+
+        .page-title {
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .construction-icon {
-            font-size: 5rem;
-            margin-bottom: 2rem;
-            color: #2d7a52;
-        }
-
-        .construction-title {
+        .page-title h2 {
             font-size: 2.5rem;
             color: #2d7a52;
             margin-bottom: 1rem;
         }
 
-        .construction-text {
+        .page-title p {
             font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #2d7a52;
+        }
+
+        .impact-card-with-image {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .impact-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .impact-card h3 {
+            color: #2d7a52;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-card h4 {
+            color: #2d7a52;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .organization {
             color: #666;
-            max-width: 600px;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .period {
+            color: #2d7a52;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .role-title {
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .activities-list {
+            list-style: none;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .activities-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .activities-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2d7a52;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #2d7a52, #389866);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
 
         footer {
@@ -172,12 +287,16 @@
                 justify-content: center;
             }
 
-            .construction-title {
+            .page-title h2 {
                 font-size: 2rem;
             }
 
-            .construction-icon {
-                font-size: 4rem;
+            .impact-card {
+                padding: 1.5rem;
+            }
+
+            .impact-card-with-image {
+                grid-template-columns: 1fr;
             }
 
             nav {
@@ -208,15 +327,91 @@
             <a href="index.html">Home</a>
             <a href="cv.html">CV</a>
             <a href="projects.html">Projects</a>
-            <a href="#about">About Me</a>
+            <a href="about.html">About Me</a>
             <a href="social-impact.html">Social Impact</a>
         </nav>
     </header>
 
     <div class="content-container">
-        <div class="construction-icon">🚧</div>
-        <h2 class="construction-title">Under Construction</h2>
-        <p class="construction-text">This page is currently being built. Check back soon for updates on my projects and work!</p>
+        <div class="page-title">
+            <h2>Community Service, Outreach and Volunteering</h2>
+            <p>Committed to creating positive change through education and community development.</p>
+        </div>
+
+        <div class="impact-card">
+            <h3>NGO Amor Aquém</h3>
+            
+            <h4>Private Tutor</h4>
+            <p class="period">March 2023 – Present</p>
+            <ul class="activities-list">
+                <li>Currently teaching four students: one mother preparing for the ENEM (Brazilian national exam), two elementary school students (4th and 6th grade), and one child in the literacy process.</li>
+                <li>Providing personalized academic support tailored to each student's needs and learning pace.</li>
+                <li>Assisting with homework and offering guidance across multiple subjects.</li>
+            </ul>
+
+            <h4>Data Coordinator</h4>
+            <p class="period">January 2024 – Present</p>
+            <ul class="activities-list">
+                <li>Structured and maintained Excel databases centralizing information for enrolled children.</li>
+                <li>Developed a Python script to process registration data and automatically group children by age and subject, optimizing class assignments and resource allocation.</li>
+                <li>Produced analytical dashboards and visual reports to support pedagogical planning and decision-making.</li>
+            </ul>
+
+            <h4>Academic Coordinator</h4>
+            <p class="period">September 2023 – July 2024</p>
+            <ul class="activities-list">
+                <li>Established a mentoring program to support students' academic and personal development.</li>
+                <li>Monitored the academic performance of 30 children, identifying areas for improvement and implementing support strategies.</li>
+                <li>Collaborated with schools and families to address educational challenges and ensure student success.</li>
+                <li>Assisted mothers in creating CVs and preparing for job opportunities.</li>
+                <li>Oversaw mentoring sessions and led small group classes.</li>
+            </ul>
+
+            <div class="photo-gallery">
+                <img src="amor-aquem-1.jpg" alt="NGO Amor Aquém activities" class="gallery-image">
+                <img src="amor-aquem-2.jpg" alt="NGO Amor Aquém activities" class="gallery-image">
+                <img src="amor-aquem-3.jpg" alt="NGO Amor Aquém activities" class="gallery-image">
+            </div>
+        </div>
+
+        <div class="impact-card">
+            <h3>BRASA</h3>
+            <p class="period">Dates</p>
+            <p class="role-title">Mentor</p>
+            <ul class="activities-list">
+                <li>Add your BRASA mentorship activities and description here.</li>
+            </ul>
+        </div>
+
+        <div class="impact-card">
+            <h3>Volunteer Private Tutor</h3>
+            <p class="period">2020 – 2021</p>
+            <ul class="activities-list">
+                <li>Delivered private lessons to two public high school students, focusing on mathematics and helping in their preparation for national exams.</li>
+                <li>Both students were accepted to the University of Brasilia, one in Law School and the other in Nursing School.</li>
+            </ul>
+        </div>
+
+        <div class="impact-card">
+            <h3>Casa do Pequeno Polegar</h3>
+            <p class="period">2015 – 2019</p>
+            <p class="role-title">Teaching Assistant</p>
+            <ul class="activities-list">
+                <li>Assisted in the care of children at a childcare center dedicated to supporting children in situations of social risk.</li>
+                <li>Initiated and organized an annual Christmas Party at the center, which still exists today. Each of the 220 children receives a kit containing clothes, a toy and a book.</li>
+            </ul>
+
+            <div class="photo-gallery">
+                <img src="casa-polegar-1.jpg" alt="Casa do Pequeno Polegar" class="gallery-image">
+                <img src="casa-polegar-2.jpg" alt="Casa do Pequeno Polegar Christmas Party" class="gallery-image">
+            </div>
+        </div>
+
+        <div class="quote-section">
+            <blockquote>
+                "Education has the power to transform lives. Through my volunteer work, I've witnessed firsthand how dedication and support can help children overcome challenges and achieve their dreams."
+            </blockquote>
+        </div>
     </div>
 
     <footer>
