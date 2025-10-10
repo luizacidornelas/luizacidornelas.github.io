@@ -118,33 +118,89 @@
         }
 
         .content-container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 3rem auto;
             padding: 0 2rem;
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        }
+
+        .page-title {
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .construction-icon {
-            font-size: 5rem;
-            margin-bottom: 2rem;
-            color: #2d7a52;
-        }
-
-        .construction-title {
+        .page-title h2 {
             font-size: 2.5rem;
             color: #2d7a52;
             margin-bottom: 1rem;
         }
 
-        .construction-text {
+        .intro-text {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #2d7a52;
+        }
+
+        .about-section h3 {
+            color: #2d7a52;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .quote-highlight {
+            background: linear-gradient(135deg, #2d7a52, #389866);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .quote-highlight p {
             font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
+            font-style: italic;
+            line-height: 1.8;
+            color: white;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
         }
 
         footer {
@@ -172,12 +228,16 @@
                 justify-content: center;
             }
 
-            .construction-title {
+            .page-title h2 {
                 font-size: 2rem;
             }
 
-            .construction-icon {
-                font-size: 4rem;
+            .about-section {
+                padding: 1.5rem;
+            }
+
+            .intro-text {
+                padding: 1.5rem;
             }
 
             nav {
@@ -214,9 +274,43 @@
     </header>
 
     <div class="content-container">
-        <div class="construction-icon">🚧</div>
-        <h2 class="construction-title">Under Construction</h2>
-        <p class="construction-text">This page is currently being built. Check back soon to learn more about me!</p>
+        <div class="page-title">
+            <h2>About Me</h2>
+        </div>
+
+        <div class="intro-text">
+            Hi! I'm Luiza, a Master's student in Mobility Engineering at Politecnico di Milano. Originally from Brasília, Brazil, I've always been deeply connected to my country's energy and creativity — but living in Italy has taught me how much growth comes from stepping outside my comfort zone and seeing life from a new perspective. And honestly, there's no better place to learn that than in a country where gelato makes even the hardest days a little sweeter.
+        </div>
+
+        <div class="about-section">
+            <h3>My Path</h3>
+            <p>
+                I graduated in Mechanical Engineering in Brazil and later moved to Milan to continue exploring how data, mobility, and technology shape the way we live. What I truly enjoy is working with data — understanding patterns, finding meaning behind numbers, and turning analysis into insights that tell real stories. My background in engineering gave me the logic and structure to solve problems, but it's through data that I feel most curious and creative.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h3>Beyond Academic Life</h3>
+            <p>
+                Outside my studies, I love slowing down through crochet, watercolor painting, and yoga. These moments bring me calm and help me disconnect from the world for a while. I've noticed that after those quiet moments of disconnection, ideas tend to come more clearly — as if taking a step back allows me to see things from a better perspective.
+            </p>
+            <p>
+                I also love learning new languages because each one changes the way I see the world and connect with people. There's something fascinating about how every language carries its own rhythm, emotions, and way of thinking. I enjoy the process of getting lost in new words and expressions — it feels like opening another window to the world.
+            </p>
+            <p>
+                These small passions have helped me find balance in life — reminding me that the best ideas and solutions don't always come from constant studying, but often from slowing down, listening, and noticing the small details.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h3>What I Believe</h3>
+            <p>
+                I'm guided by a strong sense of purpose and social awareness. I'm still exploring where my path will lead, but I know I want to use data to make things better — to understand people's needs, improve systems, and help create solutions that are both efficient and human.
+            </p>
+            <p>
+                Wherever my work takes me, I hope it always combines technical knowledge with empathy — because knowledge only matters when it serves people.
+            </p>
+        </div>
     </div>
 
     <footer>
