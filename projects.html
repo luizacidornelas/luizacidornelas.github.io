@@ -110,10 +110,16 @@
             font-size: 1.1rem;
             padding: 0.5rem 0;
             border-bottom: 2px solid transparent;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, opacity 0.3s;
         }
 
         nav a:hover {
+            border-bottom-color: white;
+            opacity: 0.9;
+        }
+
+        /* Optional: highlight current page */
+        nav a.active {
             border-bottom-color: white;
         }
 
@@ -122,29 +128,92 @@
             margin: 3rem auto;
             padding: 0 2rem;
             min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        }
+
+        /* NEW: page intro */
+        .projects-header {
             text-align: center;
-        }
-
-        .construction-icon {
-            font-size: 5rem;
             margin-bottom: 2rem;
-            color: #2d7a52;
         }
 
-        .construction-title {
-            font-size: 2.5rem;
+        .projects-title {
+            font-size: 2.3rem;
             color: #2d7a52;
-            margin-bottom: 1rem;
+            margin-bottom: 0.7rem;
         }
 
-        .construction-text {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
+        .projects-subtitle {
+            font-size: 1.05rem;
+            color: #556;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* NEW: grid cards */
+        .projects-grid {
+            margin-top: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.4rem;
+        }
+
+        .project-card {
+            display: block; /* because it is an <a> */
+            text-decoration: none;
+            color: inherit;
+            background: #ffffff;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(45, 122, 82, 0.15);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+            border-color: rgba(45, 122, 82, 0.35);
+        }
+
+        .project-thumb {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+            background: #dfeee3; /* placeholder if image missing */
+        }
+
+        .project-body {
+            padding: 1.1rem 1.1rem 1.25rem;
+        }
+
+        .project-title {
+            font-size: 1.15rem;
+            font-weight: 750;
+            color: #1f5e40;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-desc {
+            font-size: 0.98rem;
+            color: #556;
+            line-height: 1.45;
+            margin-bottom: 0.9rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.82rem;
+            padding: 0.28rem 0.55rem;
+            border-radius: 999px;
+            border: 1px solid rgba(45, 122, 82, 0.22);
+            background: rgba(45, 122, 82, 0.06);
+            color: #2d7a52;
         }
 
         footer {
@@ -152,6 +221,12 @@
             padding: 2rem;
             color: #666;
             margin-top: 3rem;
+        }
+
+        @media (max-width: 960px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -172,16 +247,20 @@
                 justify-content: center;
             }
 
-            .construction-title {
+            nav {
+                gap: 1.5rem;
+            }
+
+            .projects-title {
                 font-size: 2rem;
             }
 
-            .construction-icon {
-                font-size: 4rem;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
 
-            nav {
-                gap: 1.5rem;
+            .project-thumb {
+                height: 190px;
             }
         }
     </style>
@@ -195,7 +274,7 @@
                     <h1>Luiza Cid Ornelas</h1>
                     <div class="contact-links">
                         <a href="mailto:lcidornelas@gmail.com">✉ Email</a>
-                        <a href="https://www.linkedin.com/in/luizacidornelas/" target="_blank">in LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/luizacidornelas/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
                     </div>
                     <p class="location">Milan, Italy</p>
                 </div>
@@ -207,16 +286,64 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="cv.html">CV</a>
-            <a href="projects.html">Projects</a>
+            <a href="projects.html" class="active">Projects</a>
             <a href="about.html">About Me</a>
             <a href="social-impact.html">Social Impact</a>
         </nav>
     </header>
 
     <div class="content-container">
-        <div class="construction-icon">🚧</div>
-        <h2 class="construction-title">Under Construction</h2>
-        <p class="construction-text">This page is currently being built. Check back soon for updates on my projects and work!</p>
+        <div class="projects-header">
+            <h2 class="projects-title">Projects</h2>
+            <p class="projects-subtitle">
+                Here are some projects I’ve worked on. Click a card to see the details, code, or report.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- CARD 1 -->
+            <a class="project-card" href="https://github.com/SEU-USUARIO/SEU-REPO" target="_blank" rel="noopener noreferrer">
+                <img class="project-thumb" src="project1.jpg" alt="Project 1 thumbnail">
+                <div class="project-body">
+                    <div class="project-title">Mobility Data Analysis</div>
+                    <div class="project-desc">Short description (1–2 lines). What problem you solved and what you built.</div>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">Mobility</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- CARD 2 -->
+            <a class="project-card" href="project-railway.html">
+                <img class="project-thumb" src="project2.jpg" alt="Project 2 thumbnail">
+                <div class="project-body">
+                    <div class="project-title">Brasília–Luziânia Railway Project</div>
+                    <div class="project-desc">Short description. Link to an internal page with the full story and results.</div>
+                    <div class="tags">
+                        <span class="tag">Rail</span>
+                        <span class="tag">Noise & Vibration</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- CARD 3 -->
+            <a class="project-card" href="https://drive.google.com/SEU-LINK" target="_blank" rel="noopener noreferrer">
+                <img class="project-thumb" src="project3.jpg" alt="Project 3 thumbnail">
+                <div class="project-body">
+                    <div class="project-title">Energy & Emissions Study</div>
+                    <div class="project-desc">Short description. Example: LCA or fuel pathway comparison with key insights.</div>
+                    <div class="tags">
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">LCA</span>
+                        <span class="tag">Transport</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- DUPLICA MAIS CARDS AQUI -->
+        </div>
     </div>
 
     <footer>
@@ -224,3 +351,4 @@
     </footer>
 </body>
 </html>
+
