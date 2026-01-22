@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytical Hagen–Poiseuille Flow | Portfolio</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #e8f5e9;
+      color: #333;
+      line-height: 1.65;
+    }
+
+    /* HERO (same visual family as CV) */
+    .hero-section {
+      background: linear-gradient(rgba(34, 84, 61, 0.8), rgba(34, 84, 61, 0.8)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23225a3d" width="1200" height="800"/><path fill="%232d7a52" d="M0 400 Q300 350 600 400 T1200 400 V800 H0 Z"/><path fill="%23389866" d="M0 450 Q300 420 600 450 T1200 450 V800 H0 Z"/></svg>');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    .hero-content p {
+      opacity: 0.95;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    header {
+      background: rgba(45, 122, 82, 0.95);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    nav a:hover {
+      border-bottom-color: white;
+    }
+
+    /* CONTENT BOX (same as CV) */
+    .cv-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .top-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1rem 0 2rem 0;
+      justify-content: center;
+    }
+
+    .pill {
+      background: #f3f7f4;
+      border: 1px solid #e4eee7;
+      color: #1f5e40;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      color: #2d7a52;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+
+    .highlight {
+      background: #f9f9f9;
+      border-left: 4px solid #2d7a52;
+      padding: 1.2rem;
+      margin: 2rem 0;
+      border-radius: 6px;
+      text-align: left;
+    }
+
+    .highlight strong { color: #1f5e40; }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    li { margin-bottom: 0.55rem; }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2d7a52;
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+      text-align: center;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    .btn.secondary {
+      background: #f3f7f4;
+      color: #1f5e40;
+      border: 1px solid #d7e6dc;
+    }
+
+    .meta {
+      font-style: italic;
+      color: #666;
+      margin-top: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2.5rem;
+      color: #2d7a52;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .cv-container {
+        padding: 2rem 1.5rem;
+        margin: 2rem 1rem;
+        text-align: left; /* better readability on mobile */
+      }
+      nav { gap: 1.5rem; }
+      .hero-content h1 { font-size: 2.05rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Analytical Hagen–Poiseuille Flow in Eccentric Semiannular Ducts</h1>
+      <p>
+        A research-oriented project developing an exact analytical solution for steady,
+        incompressible laminar flow in a non-standard duct geometry using bipolar coordinates.
+      </p>
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cv.html">CV</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Me</a>
+      <a href="social-impact.html">Social Impact</a>
+    </nav>
+  </header>
+
+  <div class="cv-container">
+
+    <div class="top-meta">
+      <span class="pill">Fluid Mechanics</span>
+      <span class="pill">Analytical Modeling</span>
+      <span class="pill">Bipolar Coordinates</span>
+      <span class="pill">Research Writing</span>
+    </div>
+
+    <div class="section">
+      <h2>Project overview</h2>
+      <p>
+        Hagen–Poiseuille flow is a classical benchmark in fluid mechanics: a steady, fully
+        developed, incompressible laminar flow driven by a constant pressure gradient.
+        While exact solutions are well known for circular pipes and annular ducts, many
+        practical cross-sections are not covered by standard textbooks.
+      </p>
+      <p>
+        This project develops an <strong>exact analytical solution</strong> for Poiseuille flow in
+        <strong>eccentric semiannular ducts</strong>, a geometry that combines a semiannulus with an
+        offset inner boundary. The work addresses a gap by providing closed-form expressions
+        that can be used as a reference for numerical validation and engineering analysis.
+      </p>
+    </div>
+
+    <div class="highlight">
+      <strong>Problem statement</strong><br>
+      Derive the velocity field and flow-rate-related quantities for fully developed laminar
+      flow in an eccentric semiannular duct, and quantify how eccentricity influences the
+      hydraulic response of the system.
+    </div>
+
+    <div class="section">
+      <h2>Method and assumptions</h2>
+      <p>
+        The model considers steady, incompressible, Newtonian flow under a constant axial
+        pressure gradient. With fully developed conditions, the governing equation reduces
+        to a Poisson problem for the axial velocity on the cross-section with no-slip boundary
+        conditions.
+      </p>
+      <p>
+        To handle the eccentric semiannular boundaries analytically, the cross-section is
+        represented in <strong>bipolar coordinates</strong>, enabling boundary-fitted formulation and
+        separation of variables. The solution is constructed to satisfy the boundary conditions
+        and the forcing term associated with the pressure gradient.
+      </p>
+      <ul>
+        <li>Steady, incompressible, Newtonian fluid</li>
+        <li>Fully developed laminar flow (velocity varies only across the cross-section)</li>
+        <li>No-slip at solid boundaries</li>
+        <li>Constant pressure gradient driving the flow</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Key outputs</h2>
+      <p>
+        The analytical formulation provides expressions that enable evaluation of the duct’s
+        hydraulic behaviour across different eccentricity configurations. Main outputs include:
+      </p>
+      <ul>
+        <li>Closed-form velocity distribution over the cross-section</li>
+        <li>Volumetric flow rate as a function of geometry parameters</li>
+        <li>Dimensionless performance indicators (e.g., Poiseuille-type numbers)</li>
+        <li>Qualitative and quantitative influence of eccentricity on resistance to flow</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Why it matters</h2>
+      <p>
+        Exact analytical solutions are valuable because they function as <strong>benchmarks</strong>:
+        they help validate numerical solvers, support sensitivity analysis, and provide insight
+        into how geometry drives hydraulic losses. Eccentric semiannular geometries can appear
+        in constrained passages, partially obstructed ducts, and specialized channel designs.
+      </p>
+      <p>
+        By extending classical duct-flow solutions to a previously unexplored cross-section,
+        this project strengthens the analytical toolkit available for both research and
+        engineering applications.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Skills demonstrated</h2>
+      <ul>
+        <li>Analytical modeling and derivations in fluid mechanics</li>
+        <li>Applied mathematics (coordinate transformations and boundary-fitted methods)</li>
+        <li>Clear technical writing and structuring of a research document</li>
+      </ul>
+
+      <div class="buttons">
+        <!-- Optional: if you later add a PDF or repo, put links here -->
+        <!-- <a class="btn" href="assets/pdf/your-paper.pdf" target="_blank">Read the full paper</a> -->
+        <a class="btn secondary" href="projects.html">Back to Projects</a>
+      </div>
+
+      <p class="meta">
+        Note: Detailed derivations and full mathematical development can be shared upon request.
+      </p>
+    </div>
+
+    <a class="back-link" href="projects.html">← Back to Projects</a>
+
+  </div>
+
+  <footer>
+    © 2025 Luiza Cid Ornelas. All rights reserved.
+  </footer>
+
+</body>
+</html>
